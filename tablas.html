@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Inegi API y Google Charts</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="multinegi.css">
+</head>
+<body>
+  <div class="container-fluid  grande">
+      <header class="miheader">
+        <h1 class="text-center">Inegi API y Google Charts</h1>
+      </header>
+  </div>
+  <div class="container mediano">
+    <div class="row">
+        <a href="index.html" class="btn btn-success regreso col-lg-3" role="button">Regresar  a Mapas</a>
+
+        <div id="tablaMexico" class="mexico col-lg-10 col-lg-offset-1">
+            <p class="parrafo text-center total">Tabla de la población total de México de 1910 a 2015</p>
+        </div>
+
+        <div id="aguascalientes" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Aguascalientes de 1910 a 2015</p>
+        </div>
+
+        <div id="bajacalifornia" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Baja California de 1910 a 2015</p>
+        </div>
+
+        <div id="bajacaliforniaSur" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Baja California Sur de 1910 a 2015</p>
+        </div>
+
+        <div id="campeche" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Campeche de 1910 a 2015</p>
+        </div>
+
+        <div id="coahuila" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Coahuila de 1910 a 2015</p>
+        </div>
+
+        <div id="colima" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Colima de 1910 a 2015</p>
+        </div>
+
+        <div id="chiapas" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Chiapas de 1910 a 2015</p>
+        </div>
+
+        <div id="chihuahua" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Chihuahua de 1910 a 2015</p>
+        </div>
+
+        <div id="cdMexico" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de la Ciudad de Mexico de 1910 a 2015</p>
+        </div>
+
+        <div id="durango" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Durango de 1910 a 2015</p>
+        </div>
+
+        <div id="guanajuato" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Guanajuato de 1910 a 2015</p>
+        </div>
+
+        <div id="guerrero" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Guerrero de 1910 a 2015</p>
+        </div>
+
+        <div id="hidalgo" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Hidalgo de 1910 a 2015</p>
+        </div>
+
+        <div id="jalisco" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Jalisco de 1910 a 2015</p>
+        </div>
+
+        <div id="edoMex" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total del Estado de México de 1910 a 2015</p>
+        </div>
+
+        <div id="michoacan" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Michoacán de 1910 a 2015</p>
+        </div>
+
+        <div id="morelos" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Morelos de 1910 a 2015</p>
+        </div>
+
+        <div id="nayarit" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Nayarit de 1910 a 2015</p>
+        </div>
+
+        <div id="nleon" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Nuevo León de 1910 a 2015</p>
+        </div>
+
+        <div id="oaxaca" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Oaxaca de 1910 a 2015</p>
+        </div>
+
+        <div id="puebla" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Puebla de 1910 a 2015</p>
+        </div>
+
+        <div id="queretaro" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Querétaro de 1910 a 2015</p>
+        </div>
+
+        <div id="quintanaroo" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Quinata Roo de 1910 a 2015</p>
+        </div>
+
+        <div id="sanluispotosi" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de San Luis Potosí de 1910 a 2015</p>
+        </div>
+
+        <div id="sinaloa" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Sinaloa de 1910 a 2015</p>
+        </div>
+
+        <div id="sonora" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Sonora de 1910 a 2015</p>
+        </div>
+
+        <div id="tabasco" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Tabasco de 1910 a 2015</p>
+        </div>
+
+        <div id="tamaulipas" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Tamaulipas de 1910 a 2015</p>
+        </div>
+
+        <div id="tlaxcala" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Tlaxcala de 1910 a 2015</p>
+        </div>
+
+        <div id="veracruz" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Veracruz de 1910 a 2015</p>
+        </div>
+
+        <div id="yucatan" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Yucatán de 1910 a 2015</p>
+        </div>
+
+        <div id="zacatecas" class="mexico col-lg-8 col-lg-offset-2">
+            <p class="parrafo text-center total">Tabla de la población total de Zacatecas de 1910 a 2015</p>
+        </div>
+
+    </div>
+
+  </div>
+
+  <div class="container-fluid  grande">
+    <footer class="mifooter">
+          <p class="parrafo text-center">Este trabajo fue realizado a partir de los datos que arroja la API del Instituto Nacional de Estadística y Geografía de México (Inegi)</p>
+          <p class="parrafo text-center">Trabajo realizado por: Josué Daniel Flores Morales 2018</p>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="multinegi.js" charset="utf-8"></script>
+</body>
+</html>

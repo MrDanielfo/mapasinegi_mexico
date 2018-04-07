@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Inegi API y Google Charts</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../multinegi.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  //var apiKeyMaps = 'AIzaSyBXjgI8Kg7QtmOLZX-PT9sPZbrVi3cpmms';
+
+  google.charts.load('current', {
+          'packages' :['geochart'],
+          'mapsApiKey' : 'AIzaSyBXjgI8Kg7QtmOLZX-PT9sPZbrVi3cpmms'
+        });
+  google.charts.setOnLoadCallback(mexico70Map);
+  google.charts.setOnLoadCallback(nacional70Map);
+
+  function mexico70Map() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['State', 'Population', 'Area'],
+      ['Distrito Federal', 6874165, 1000],
+      ['Jalisco', 3296586, 550],
+      ['Nuevo León', 1694680, 350],
+      ['Oaxaca', 2015424, 400],
+      ['Puebla', 2508226, 450],
+      ['Estado de México', 3833185, 650],
+      ['Sonora', 1098720, 200],
+      ['Yucatán', 758355, 100]
+    ]);
+
+    var options = {
+        //legend: 'Población en México en la década de 1970',
+        region: 'MX',
+        resolution: 'provinces',
+        //displayMode: 'markers', //se reune por puntos
+        sizeAxis: { minValue: 0, maxValue: 1000 },
+        backgroundColor: '#81d4fa',
+        datalessRegionColor: '#f3f3f3',
+        colorAxis : {
+          colors: ['green', 'blue', 'red']
+        }
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('mapaMexico70'));
+     chart.draw(data, options);
+
+     window.addEventListener('resize', function(){
+         mexico70Map();
+     }, true);
+  }
+
+  function nacional70Map() {
+    var data = google.visualization.arrayToDataTable([
+      ['Country', 'Population', 'Area'],
+      ['Mexico', 48225238, 1000],
+    ]);
+
+    var options = {
+        //legend: 'Población en México en 1970',
+        region: 'MX',
+        //resolution: 'provinces',
+        //displayMode: 'markers', //se reune por puntos
+        sizeAxis: { minValue: 0, maxValue: 1000 },
+        backgroundColor: '#81d4fa',
+        datalessRegionColor: '#f3f3f3',
+        colorAxis : {
+          colors: ['#F7E684']
+        }
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('mapanacional70'));
+     chart.draw(data, options);
+
+     window.addEventListener('resize', function(){
+         nacional70Map();
+     }, true);
+
+  }
+
+  </script>
+</head>
+<body>
+  <div class="container-fluid  grande">
+      <header class="miheader">
+        <h1 class="text-center">Inegi API y Google Charts</h1>
+      </header>
+  </div>
+  <div class="container mediano">
+    <div class="row">
+        <h2 class="text-center">Población Mexicana: de 1970 a 2015</h2>
+        <p class="parrafo text-center">De acuerdo con las cifras y datos que se han obtenido del Inegi en relación a la población mexicana, se puede aseverar que ésta se ha mantenido en constante crecimiento durante las últimas décadas, sino es que desde el término de una de las etapas más significativas dentro de la historia moderna de México: la revolución mexicana, allá por la década de 1920</p>
+        <p class="parrafo text-center">Este fenómeno de crecimiento no es exclusivo de México, pues se ha observado de igual forma en países como China, India, Pakistán y Brasil; claro está que las causas corresponden a cuestiones específicas de cada país, y por lo mismo, dicho crecimiento es mayor en unos países que en otros</p>
+        <p class="parrafo text-center">En este trabajo que pretende ser mayoritariamente gráfico e ilustrativo, se visualizarán los mapas del crecimiento de la población durante las últimas seis décadas, más el añadido del lustro que corresponde al año 2015</p>
+
+        <p class="indicaciones text-center">El usuario puede navegar a través de los botones desplegados y dirigirse a los mapas de la década que desee; puede revisar el que representa el crecimiento nacional, así como el que muestra el de las entidades federativas</p>
+
+        <ul class="list-inline text-center lista-decadas">
+          <li><a href="mex1960.html" class="btn btn-default">México en 1960</a></li>
+          <li><a href="mex1970.html" class="btn btn-default">México en 1970</a></li>
+          <li><a href="mex1980.html" class="btn btn-default">México en 1980</a></li>
+          <li><a href="mex1990.html" class="btn btn-default">México en 1990</a></li>
+          <li><a href="mex2000.html" class="btn btn-default">México en 2000</a></li>
+          <li><a href="mex2010.html" class="btn btn-default">México en 2010</a></li>
+          <li><a href="mex2015.html" class="btn btn-default">México: hoy en día</a></li>
+        </ul>
+
+        <p class="parrafo text-center">Población por entidades federativas 1970</p>
+        <div id="mapaMexico70" class="mapas col-lg-10 col-lg-offset-1">
+
+        </div>
+
+        <p class="parrafo text-center col-lg-12">México: población nacional en 1970</p>
+        <div id="mapanacional70" class="mapas col-lg-10 col-lg-offset-1">
+
+        </div>
+    </div>
+
+    <a href="../tablas.html" class="btn btn-info regreso" role="button">Ver Tablas</a>
+  </div>
+
+  <div class="container-fluid  grande">
+    <footer class="mifooter">
+          <p class="parrafo text-center">Este trabajo fue realizado a partir de los datos que arroja la API del Instituto Nacional de Estadística y Geografía de México (Inegi)</p>
+          <p class="parrafo text-center">Trabajo realizado por: Josué Daniel Flores Morales 2018</p>
+    </footer>
+  </div>
+
+</body>
+</html>

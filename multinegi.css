@@ -1,0 +1,68 @@
+.grande{
+  margin: 0!important;
+  background-color: #143048;
+}
+
+.miheader,
+.mifooter {
+  color: #fff;
+  padding: 20px 20px;
+}
+
+
+p.parrafo {
+  margin-top: 25px;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+p.parrafo.total {
+  font-weight: bold;
+}
+.mexico {
+  margin-top: 50px;
+  height: 500px;
+  /*width: 100%;*/
+  margin-bottom: 250px;
+}
+
+.regreso {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.mapas {
+  max-width: 100%;
+  height: 580px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.indicaciones {
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+ul.lista-decadas {
+  margin: 70px auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .mapas {
+    max-width: 65%;
+    height: 300px;
+    margin-left: 18%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mapas {
+    max-width: 95%;
+    height: 200px;
+    margin-left: 2%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+}
